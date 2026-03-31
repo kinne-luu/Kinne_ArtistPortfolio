@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KinneSample</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -22,13 +22,9 @@
             </div>
         </div>
     </div>
-
     <div class="rounded-square">
-        
         <div class="side-folder folder-top" id="folder-top">
-            <div class="folder-tab" onclick="toggleFolder('top')">
-                <i class="fas fa-cog"></i>
-            </div>
+            <div class="folder-tab" onclick="toggleFolder('top')"><i class="fas fa-cog"></i></div>
             <div class="folder-content">
                 <div id="login-screen">
                     <h3>Control Center</h3>
@@ -36,7 +32,6 @@
                     <button class="btn-update" onclick="checkPassword()" style="margin-top: 10px;">Unlock</button>
                     <p id="login-msg" style="color:red; font-size:12px; margin-top: 5px; text-align: center;"></p>
                 </div>
-                
                 <div id="admin-panel" style="display:none;">
                     <h3>Control Center</h3>
                     <label>Commission Status:</label>
@@ -44,37 +39,25 @@
                         <option value="OPEN">OPEN</option>
                         <option value="CLOSED">CLOSED</option>
                     </select>
-
                     <label>YouTube Link:</label>
                     <input type="text" id="cc-yt" placeholder="Paste YouTube link here...">
-
                     <label>Sample Folders:</label>
                     <div id="drive-links-container"></div>
                     <button onclick="addDriveInput()" class="btn-small">+ Add Link</button>
-
                     <button onclick="updateToSheet()" class="btn-update">Update</button>
                     <p id="update-msg" style="font-size:12px; margin-top:5px; text-align: center;"></p>
                 </div>
             </div>
         </div>
-
         <div class="side-folder folder-bottom" id="folder-bottom">
-            <div class="folder-tab" onclick="toggleFolder('bottom')">
-                <i class="fas fa-music"></i>
-            </div>
+            <div class="folder-tab" onclick="toggleFolder('bottom')"><i class="fas fa-music"></i></div>
             <div class="folder-content player-content">
                 <div class="player-left">
                     <img id="yt-cover" src="" alt="cover" style="animation-play-state: paused;">
                 </div>
                 <div class="player-right">
-                    <div class="music-info">
-                        <div id="yt-title" class="music-title">Loading music...</div>
-                    </div>
-                    
-                    <div class="progress-bar-container">
-                        <div class="progress-bar" id="yt-progress"></div>
-                    </div>
-                    
+                    <div class="music-info"><div id="yt-title" class="music-title">Loading music...</div></div>
+                    <div class="progress-bar-container"><div class="progress-bar" id="yt-progress"></div></div>
                     <div class="music-controls">
                         <button class="music-btn" onclick="toggleMute()"><i class="fas fa-volume-up" id="mute-icon"></i></button>
                         <button class="music-btn play-toggle" onclick="togglePlayPause()"><i class="fas fa-play" id="play-pause-icon"></i></button>
@@ -83,40 +66,29 @@
                 <div id="yt-hidden-player" style="display: none;"></div>
             </div>
         </div>
-
         <div id="inner-frame">
             <div id="main-content-wrapper">
                 <div class="cover-bg"></div>
-                
-             <div class="avatar"></div>
-                
+                <div class="avatar"></div>
                 <h1 class="cute-text">Hi, my name is...</h1>
                 <h1 class="cute-text-2">Your Name</h1>
                 <div class="about-me">
                     <span class="bio-title">Little bit about me...</span>
                     <p>A creative space dedicated to visual storytelling and aesthetic exploration. This portfolio serves as a demonstration of layout, color harmony, and digital craftsmanship.</p>
                 </div>
-                
-                <div class="sparkle s1"></div><div class="sparkle s2"></div><div class="sparkle s3"></div>
-                <div class="sparkle s4"></div><div class="sparkle s5"></div><div class="sparkle s6"></div>
-                <div class="sparkle s7"></div><div class="sparkle s8"></div><div class="sparkle s9"></div>
-                
                 <div class="pill-status">
                     <span class="prefix">Commission:</span><span class="status" id="commission-status">LOADING</span>
                 </div>
-
                 <div class="social-links">
                     <a href="https://www.instagram.com/kinne_luu/" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
                     <a href="https://yourlink.straw.page" target="_blank" class="social-btn"><i class="fas fa-link"></i></a>
                     <a href="#" target="_blank" class="social-btn"><i class="fas fa-star"></i></a>
                 </div>
-
                 <div class="tab-menu">
                     <button class="tab-btn active" onclick="openTab('price', this)">Price</button>
                     <button class="tab-btn" onclick="openTab('tos', this)">TOS</button>
                     <button class="tab-btn" onclick="openTab('sample', this)">Sample</button>
                 </div>
-                
                 <div class="content-area">
                     <div id="price" class="tab-panel active text-content">
                         <div class="price-container">
@@ -151,43 +123,21 @@
                         <ul>
                             <li>Customized visual themes based on project needs.</li>
                             <li>Collaborative moodboarding and style exploration.</li>
-                            <li>Visual consistency across multiple assets.</li>
                         </ul>
-                        <h4>II. TECHNICAL SPECS</h4>
-                        <ul>
-                            <li>Format: PSD, PNG, or specialized vector files.</li>
-                            <li>Standard aspect ratios or custom dimensions.</li>
-                        </ul>
-                        <h4>III. REVISIONS: <span class="hl">FLEXIBLE ADJUSTMENTS</span></h4>
                     </div>
-
                     <div id="tos" class="tab-panel text-content">
                         <h3 class="main-title">SERVICE <span class="hl">GUIDELINES</span></h3>
                         <h4>I. GENERAL TERMS</h4>
                         <ul>
                             <li>Project timelines are estimated based on complexity.</li>
                             <li>Open communication throughout the creative process.</li>
-                            <li><span class="hl">Proper attribution</span> is appreciated for public displays.</li>
-                        </ul>
-                        <h4>II. USAGE RIGHTS</h4>
-                        <ul>
-                            <li><span class="hl">Creator</span>: Retains portfolio display and authorship rights.</li>
-                            <li><span class="hl">Client</span>: Receives rights for personal or specified usage.</li>
-                        </ul>
-                        <h4>III. COMMITMENT</h4>
-                        <ul>
-                            <li>Ensuring high-quality output for every project phase.</li>
-                            <li>Transparent updates at each major milestone.</li>
-                            <li>Dedicated support for technical inquiries post-delivery.</li>
                         </ul>
                     </div>
-
                     <div id="sample" class="tab-panel">
                         <div id="sample-category-view"></div>
                     </div>
                 </div>
             </div>
-
             <div id="sample-gallery-view">
                 <div class="gallery-header">
                     <button class="back-btn" onclick="closeGallery()">⬅ Back</button>
@@ -199,7 +149,6 @@
             </div>
         </div>
     </div> 
-    
     <div class="lightbox" id="lightbox">
         <span class="close-btn" onclick="closeLightbox()">×</span>
         <span class="help-text">Cuộn để zoom • Kéo để di chuyển</span>
@@ -207,28 +156,23 @@
             <img id="lightbox-img" src="" alt="Zoomable Sample">
         </div>
     </div>
-
     <div class="report-pill-bottom-left" onclick="openReportModal()">
         <div class="report-pill-horizontal">
             <span class="pill-text-plain">REPORT?</span>
         </div>
     </div>
-
     <div id="report-modal" class="modal-overlay" onclick="closeReportModal()">
         <div class="modal-box" onclick="event.stopPropagation()">
             <div class="modal-icon"><i class="fas fa-exclamation-circle"></i></div>
             <h3>Báo cáo?</h3>
             <p>Hãy chắc chắn artist này vi phạm trước khi báo cáo cậu nhé!</p>
-            
             <div class="report-links">
                 <a href="https://www.instagram.com/kinne_luu/" target="_blank" class="report-platform-btn pill-btn-ig"><i class="fab fa-instagram"></i> Instagram</a>
                 <a href="https://www.facebook.com/kienmanhluu" target="_blank" class="report-platform-btn pill-btn-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
-                <a href="https://x.com/kienmanhluu" target="_blank" class="report-platform-btn pill-btn-x"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
             </div>
             <button class="modal-btn-close" onclick="closeReportModal()">Cancel</button>
         </div>
     </div>
-
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
 </body>
