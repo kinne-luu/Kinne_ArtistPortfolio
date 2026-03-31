@@ -14,19 +14,16 @@
     /* 5. Xanh tím đậm (Cornflower Blue) - Chữ, nhấn hover */
     --color-cornflower: #5B7DB1;
 
-    /* Áp dụng màu trơn (Solid) thay cho kính mờ */
-    --glass-panel: var(--color-alice); 
-    --glass-panel-heavy: #E1EFF8; 
-    --glass-border: var(--color-silver); 
-    
-    --light-bg: #FFFFFF; 
-    
-    /* Màu chữ */
-    --text-dark: #2B3A55; 
-    --text-main: var(--color-cornflower); 
-    
-    /* Màu nhấn (Accent) */
-    --accent-main: var(--color-cyan); 
+    --glass-panel: var(--color-alice);
+    --glass-panel-heavy: #E1EFF8;
+    --glass-border: var(--color-silver);
+
+    --light-bg: #FFFFFF;
+
+    --text-dark: #2B3A55;
+    --text-main: var(--color-cornflower);
+
+    --accent-main: var(--color-cyan);
     --accent-light: #AEE0E5;
     --accent-hover: var(--color-cornflower);
     --accent-pink: var(--color-pink);
@@ -35,17 +32,16 @@
 /* =========================================
    1. GLOBAL & SCROLLBAR
    ========================================= */
-::-webkit-scrollbar { width: 5px; } 
+::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--accent-light); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-main); }
 
-body { 
-    margin: 0; 
+body {
+    margin: 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    /* ĐÃ SỬA LẠI LINK ẢNH TẠI ĐÂY (Xóa Clients và refs/heads/) */
     background-image: url('https://raw.githubusercontent.com/kinne-luu/Kinne_ArtistPortfolio/main/Nhax/MatPhoto/Screenshot%20(1170).png');
     background-size: cover;
     background-position: center;
@@ -57,14 +53,13 @@ body {
     user-select: none;
 }
 
-/* HIỆU ỨNG FROSTED GLASS PHỦ TOÀN BỘ BACKGROUND (ĐƯỢC GIỮ LẠI) */
 body::before {
     content: "";
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(190, 190, 190, 0.15); 
-    backdrop-filter: blur(12px); 
+    background-color: rgba(190, 190, 190, 0.15);
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     z-index: -1;
 }
@@ -74,23 +69,23 @@ body::before {
    ========================================= */
 .rounded-square {
     width: 700px; height: 590px;
-    border-radius: 35px; 
-    background-color: transparent; 
+    border-radius: 35px;
+    background-color: transparent;
     margin: 0 auto;
-    position: relative; 
-    overflow: visible; 
-    box-shadow: 0 25px 50px rgba(43, 58, 85, 0.2); 
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 25px 50px rgba(43, 58, 85, 0.2);
     z-index: 1;
 }
 
 #inner-frame {
     width: 100%; height: 100%;
-    position: relative; 
-    border-radius: 35px; 
-    overflow: hidden; 
-    background: var(--glass-panel); /* Màu trắng xanh trơn */
+    position: relative;
+    border-radius: 35px;
+    overflow: hidden;
+    background: var(--glass-panel);
     border: 1px solid var(--glass-border);
-    z-index: 2; 
+    z-index: 2;
 }
 
 /* =========================================
@@ -101,11 +96,11 @@ body::before {
     right: 0;
     background-color: var(--light-bg);
     border: 1px solid var(--glass-border);
-    border-left: none; 
-    border-radius: 0 25px 25px 0; 
-    z-index: 0; 
-    transition: transform 0.5s cubic-bezier(0.34, 1.1, 0.64, 1); 
-    transform: translateX(0); 
+    border-left: none;
+    border-radius: 0 25px 25px 0;
+    z-index: 0;
+    transition: transform 0.5s cubic-bezier(0.34, 1.1, 0.64, 1);
+    transform: translateX(0);
     box-shadow: 10px 10px 30px rgba(43, 58, 85, 0.1);
     display: flex;
 }
@@ -114,14 +109,14 @@ body::before {
 
 .folder-tab {
     position: absolute;
-    left: calc(100% - 0px); 
-    top: 25px; 
+    left: calc(100% - 0px);
+    top: 25px;
     width: 35px;
     height: 65px;
     background-color: var(--light-bg);
     border: 1px solid var(--glass-border);
-    border-left: none; 
-    border-radius: 0 15px 15px 0; 
+    border-left: none;
+    border-radius: 0 15px 15px 0;
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     color: var(--accent-main);
@@ -159,7 +154,7 @@ body::before {
 .folder-content input, .folder-content select {
     width: 100%; padding: 8px 10px; box-sizing: border-box; font-family: 'Mali', cursive;
     border: 1px solid var(--glass-border); border-radius: 10px; margin-top: 5px; font-size: 12px; outline: none;
-    transition: 0.3s; background: #ffffff; /* Nền trơn trắng */
+    transition: 0.3s; background: #ffffff;
 }
 .folder-content input:focus, .folder-content select:focus { border-color: var(--accent-main); }
 
@@ -185,7 +180,7 @@ body::before {
 
 @keyframes spinRecord { 100% { transform: rotate(360deg); } }
 
-.player-right { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; } 
+.player-right { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
 
 .music-info { margin-bottom: 6px; width: 100%; }
 .music-title { font-family: 'Mali', cursive; font-size: 13px; font-weight: 800; color: var(--text-dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
@@ -208,26 +203,24 @@ body::before {
 
 .cover-bg { width: 100%; height: 210px; background: linear-gradient(180deg, var(--color-alice) 0%, rgba(240, 248, 255, 0) 100%); position: absolute; top: 0; left: 0; z-index: 5; }
 
-.avatar { 
-    width: 130px; 
-    height: 130px; 
-    position: absolute; 
-    top: 30px; 
-    left: 30px; 
-    z-index: 10; 
-    background-image: url('https://raw.githubusercontent.com/kinne-luu/Kinne_ArtistPortfolio/refs/heads/main/Nhax/MatPhoto/Screenshot%202026-03-31%20114805.png'); 
-    background-size: cover; 
+.avatar {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 10;
+    background-image: url('https://raw.githubusercontent.com/kinne-luu/Kinne_ArtistPortfolio/refs/heads/main/Nhax/MatPhoto/Screenshot%202026-03-31%20114805.png');
+    background-size: cover;
     background-position: center;
-    border-radius: 50%; 
+    border-radius: 50%;
     cursor: pointer;
-    /* Thêm transition mượt mà và đổ bóng gốc */
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     box-shadow: 0 4px 15px rgba(43, 58, 85, 0.1);
 }
 
-/* Hiệu ứng hover nhún nhẹ và sáng viền */
-.avatar:hover { 
-    transform: scale(1.08) translateY(-3px); 
+.avatar:hover {
+    transform: scale(1.08) translateY(-3px);
     box-shadow: 0 10px 25px rgba(112, 197, 206, 0.5);
 }
 
@@ -252,8 +245,8 @@ body::before {
 .tab-menu::before {
     content: "";
     position: absolute;
-    top: -10px; left: 20px; width: 620px; height: 0; 
-    border-top: 2px dashed var(--color-silver); 
+    top: -10px; left: 20px; width: 620px; height: 0;
+    border-top: 2px dashed var(--color-silver);
 }
 
 .tab-btn { background-color: var(--glass-panel-heavy); border: 1px solid var(--glass-border); color: var(--text-main); padding: 8px 25px; border-radius: 50px; font-family: 'Mali', cursive; font-weight: 800; font-size: 14px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(43, 58, 85, 0.03); }
@@ -261,18 +254,20 @@ body::before {
 .tab-btn.active { background-color: var(--accent-main); color: #fff; box-shadow: 0 6px 15px rgba(112, 197, 206, 0.3); transform: translateY(-2px); border: none;}
 
 /* Content Area */
-.content-area { 
-    position: absolute; top: 320px; left: 30px; width: 640px; height: 245px; z-index: 10; padding: 10px; box-sizing: border-box; 
+.content-area {
+    position: absolute; top: 320px; left: 30px; width: 640px; height: 245px; z-index: 10; padding: 10px; box-sizing: border-box;
 }
 
-.tab-panel { 
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; visibility: hidden; transform: translateY(15px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); font-family: 'Mali', cursive; color: var(--text-dark); overflow-y: auto; padding: 10px 15px 20px 0; box-sizing: border-box; font-weight: 500; 
+.tab-panel {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; visibility: hidden; transform: translateY(15px);
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Mali', cursive; color: var(--text-dark); overflow-y: auto; padding: 10px 15px 20px 0; box-sizing: border-box; font-weight: 500;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 4%, black 90%, transparent 100%);
     mask-image: linear-gradient(to bottom, transparent 0%, black 4%, black 90%, transparent 100%);
 }
 .tab-panel.active { opacity: 1; visibility: visible; transform: translateY(0); }
 
-.hl { color: var(--accent-pink); font-weight: 800; } 
+.hl { color: var(--accent-pink); font-weight: 800; }
 .text-content h3.main-title { text-align: center; font-size: 24px; margin: 0 0 15px 0; text-transform: uppercase; color: var(--text-main); font-weight: 800; }
 .text-content h4 { font-size: 16px; margin: 15px 0 8px 0; text-transform: uppercase; color: var(--text-main); font-weight: 800; display: inline-block; background: var(--glass-panel-heavy); padding: 4px 12px; border-radius: 10px; border: 1px solid var(--glass-border);}
 .text-content p { font-size: 13px; line-height: 1.6; margin: 0 0 10px 0; text-shadow: 0px 0px 3px #FFFFFF;}
@@ -289,34 +284,33 @@ body::before {
 /* =========================================
    7. GALLERY & LIGHTBOX
    ========================================= */
-/* --- SỬA LỖI SAMPLE ÉP THÀNH 1 HÀNG --- */
-#sample-category-view { 
-    display: flex; 
-    flex-wrap: wrap; /* Cho phép các khối rớt xuống dòng */
-    gap: 20px; 
-    height: max-content; /* Thay đổi height để khung tự do dài ra */
-    width: 100%; 
-    box-sizing: border-box; 
-    justify-content: flex-start; /* Dồn 2 cái 1 hàng về bên trái */
-    align-items: flex-start; 
-    padding: 10px 0 20px 0; 
+#sample-category-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: max-content;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px 0 20px 0;
 }
-.category-card { 
-    width: calc(50% - 10px); /* Chia đôi màn hình trừ đi khoảng cách gap */
-    height: 150px; /* Khóa cứng chiều cao, không cho nó xẹp lép */
-    flex-shrink: 0; /* Cấm flexbox tự ý thu nhỏ thẻ */
-    box-sizing: border-box; 
-    border-radius: 25px; 
-    border: 1px solid var(--glass-border); 
-    background-color: var(--light-bg); 
-    cursor: pointer; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    box-shadow: 0 10px 25px rgba(43, 58, 85, 0.1); 
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); 
-    position: relative; 
-    overflow: hidden; 
+.category-card {
+    width: calc(50% - 10px);
+    height: 150px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 1px solid var(--glass-border);
+    background-color: var(--light-bg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(43, 58, 85, 0.1);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
 }
 .card-bg-grid { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 3px; z-index: 1; border-radius: 25px; }
 .card-thumb { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.5s ease;}
@@ -343,7 +337,7 @@ body::before {
 .sample-item .sample-text { position: absolute; font-family: 'Mali', cursive; font-size: 13px; color: var(--text-dark); font-weight: 800; background: var(--light-bg); padding: 4px 12px; border-radius: 12px; pointer-events: none; z-index: 3; opacity: 0; transition: 0.3s; transform: translateY(10px); }
 .sample-item:hover .sample-text { opacity: 1; transform: translateY(0); }
 
-.lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(43, 58, 85, 0.95); /* Xanh tím đậm thay cho đen */ z-index: 99999; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.4s ease; }
+.lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(43, 58, 85, 0.95); z-index: 99999; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.4s ease; }
 .lightbox.show { opacity: 1; visibility: visible; }
 .lightbox-img-wrapper { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .lightbox img { max-width: 90%; max-height: 85%; border-radius: 15px; border: none; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5); cursor: grab; transition: transform 0.1s ease-out;}
@@ -363,7 +357,7 @@ button, .folder-tab, .social-btn, #yt-cover { -webkit-user-select: none; user-se
 .cat-symbol { position: fixed; pointer-events: none; font-size: 15px; z-index: 9999; animation: floatUp 0.8s ease-out forwards; user-select: none; text-shadow: 1px 1px 3px #FFFFFF; }
 @keyframes floatUp { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(-50px) scale(1.5); opacity: 0; } }
 
-/* PHẦN 1: THANH Ở RÌA (SIDEBAR) */
+/* PHẦN THANH Ở RÌA (SIDEBAR) */
 .report-sidebar {
     position: fixed;
     right: 15px;
@@ -373,7 +367,7 @@ button, .folder-tab, .social-btn, #yt-cover { -webkit-user-select: none; user-se
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    z-index: 9999; /* Nằm dưới Modal một chút */
+    z-index: 9999;
     padding: 15px 8px;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
@@ -407,3 +401,301 @@ button, .folder-tab, .social-btn, #yt-cover { -webkit-user-select: none; user-se
 .pill-btn-fb { background-color: #1877F2; color: #fff; }
 .pill-btn-x { background-color: #000; color: #fff; }
 .report-platform-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+/* =========================================
+   9. MOBILE RESPONSIVE OPTIMIZATION
+   ========================================= */
+@media screen and (max-width: 768px) {
+
+    /* === LAYOUT TỔNG === */
+    body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rounded-square {
+        width: 90%;
+        height: calc(100vh - 110px);
+        max-height: 800px;
+        margin: 10px auto 70px auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        overflow: hidden; /* Khóa cuộn khung ngoài */
+    }
+
+    /* Khung trong: cuộn được theo chiều dọc (để header + content cuộn cùng) */
+    #inner-frame {
+        height: 100%;
+        overflow-y: auto;           /* CHO PHÉP cuộn toàn bộ nội dung bên trong */
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;         /* Cần để gallery-view absolute phủ đúng */
+    }
+
+    /* === XÓA TỌA ĐỘ CỨNG === */
+    .avatar, .cute-text, .cute-text-2, .about-me,
+    .pill-status, .social-links, .tab-menu, .content-area {
+        position: relative !important;
+        top: auto !important; left: auto !important;
+        right: auto !important; bottom: auto !important;
+        transform: none !important;
+    }
+
+    /* === HEADER ZONE === */
+    .cover-bg { height: 130px; }
+
+    .avatar {
+        margin: 20px auto 0 auto !important;
+        width: 90px !important;
+        height: 90px !important;
+        flex-shrink: 0;
+        object-fit: cover;
+        display: block;
+    }
+
+    .cute-text { margin-top: 15px; text-align: center; width: 100%; font-size: 14px; }
+    .cute-text-2 { margin-top: 5px; text-align: center; width: 100%; font-size: 22px; }
+
+    .about-me {
+        width: 85%;
+        margin: 15px auto;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .pill-status { margin: 10px auto; width: max-content; }
+    .social-links { justify-content: center; margin: 15px auto; gap: 15px; }
+
+    .tab-menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 95%;
+        margin: 10px auto 5px auto;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+    .tab-menu::before { display: none; }
+    .tab-btn { font-size: 12px; padding: 6px 14px; }
+
+    /* === CONTENT AREA: tự co theo nội dung, KHÔNG cố định height === */
+    .content-area {
+        width: 100%;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible;
+        padding: 5px 15px 20px 15px;
+        box-sizing: border-box;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    /* Tab panel ẩn: xẹp hoàn toàn, không chiếm 1px nào */
+    .tab-panel {
+        position: absolute !important;
+        top: 0; left: 0;
+        width: 100%;
+        height: 0 !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        padding: 0 !important;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+    }
+    /* Tab active: vào flow, tự co theo đúng nội dung */
+    .tab-panel.active {
+        position: relative !important;
+        height: auto !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        padding: 5px 10px 20px 5px !important;
+    }
+
+    /* === SAMPLE CATEGORY: GRID 2 CỘT GỌN GÀNG === */
+    #sample-category-view {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 8px 4px 20px 4px;
+        width: 100%;
+        height: auto !important;
+        box-sizing: border-box;
+        flex-wrap: unset;
+        justify-content: unset;
+        align-items: unset;
+    }
+
+    .category-card {
+        width: 100% !important;
+        height: 110px !important;
+        flex-shrink: 0;
+        border-radius: 18px;
+    }
+
+    .category-card span {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    /* === GALLERY BACKDROP: chặn tương tác phía sau === */
+    #sample-gallery-view::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(43, 58, 85, 0.5);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: -1;
+        border-radius: 0;
+        pointer-events: all; /* chặn click xuyên qua */
+    }
+
+    /* === SAMPLE GALLERY VIEW: phủ full lên #inner-frame === */
+    #sample-gallery-view {
+        /* Ẩn mặc định — không chiếm chỗ trong flow */
+        display: none !important;
+        position: fixed !important;
+        /* Bám theo .rounded-square: 90% wide, căn giữa */
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) scale(0.95) !important;
+        width: 90% !important;
+        height: calc(100vh - 110px) !important;
+        max-height: 800px !important;
+        z-index: 100000 !important;
+        border-radius: 30px !important;
+        background: var(--glass-panel) !important;
+        padding: 15px 12px !important;
+        box-sizing: border-box !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+        box-shadow: 0 15px 50px rgba(43, 58, 85, 0.35) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.1, 0.64, 1), visibility 0.35s !important;
+    }
+
+    #sample-gallery-view.show {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translate(-50%, -50%) scale(1) !important;
+    }
+
+    /* Header gallery: cứng, không co */
+    .gallery-header {
+        flex-shrink: 0;
+        padding-bottom: 10px;
+        margin-bottom: 8px;
+    }
+
+    /* Vùng ảnh cuộn bên trong — trick flex:1 + height:0 */
+    .gallery-scroll-area {
+        flex: 1 !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        padding-right: 4px !important;
+        padding-bottom: 25px !important;
+    }
+
+    /* Grid ảnh 2 cột */
+    .sample-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        padding: 5px 2px 20px 2px !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .price-container { flex-direction: column; gap: 12px; padding: 12px; }
+    .price-col { width: 100%; }
+
+    /* === BOTTOM SHEET (FOLDER) === */
+    .side-folder {
+        position: fixed !important;
+        bottom: 0 !important; top: auto !important; left: 0 !important;
+        width: 100% !important; height: auto !important;
+        border-radius: 30px 30px 0 0 !important;
+        border-left: 1px solid var(--glass-border) !important;
+        transform: translateY(100%) !important;
+        transition: transform 0.4s cubic-bezier(0.34, 1.1, 0.64, 1) !important;
+        z-index: 99999 !important;
+    }
+    .side-folder.open { transform: translateY(0) !important; box-shadow: 0 -10px 40px rgba(43, 58, 85, 0.2) !important; }
+
+    .folder-tab {
+        position: absolute !important;
+        top: -70px !important;
+        width: 50px !important; height: 50px !important;
+        border-radius: 50% !important;
+        box-shadow: 0 5px 15px rgba(43, 58, 85, 0.15) !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        transition: all 0.3s ease !important;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .folder-top .folder-tab { right: 20px !important; left: auto !important; }
+    .folder-bottom .folder-tab { right: 85px !important; left: auto !important; }
+    .side-folder.open .folder-tab { top: -20px !important; }
+
+    body:has(.folder-top.open) .folder-bottom .folder-tab { opacity: 0 !important; pointer-events: none !important; transform: scale(0.8); }
+    body:has(.folder-bottom.open) .folder-top .folder-tab { opacity: 0 !important; pointer-events: none !important; transform: scale(0.8); }
+
+    .folder-content {
+        width: 100% !important; max-width: 100% !important;
+        height: auto !important; max-height: 55vh !important;
+        margin-top: 0 !important; padding: 25px 20px 35px 20px !important;
+        box-sizing: border-box; overflow-y: auto;
+    }
+
+    /* === MUSIC PLAYER === */
+    .player-content { flex-direction: column; gap: 10px; text-align: center; }
+    .player-left { flex: none; justify-content: center; width: 100%; margin: 0 auto; }
+    #yt-cover { width: 80px; height: 80px; }
+
+    /* === REPORT PILL & MODAL === */
+    .report-pill-bottom-left { bottom: 20px !important; left: 15px !important; z-index: 99998; }
+
+    .modal-box {
+        width: 85% !important;
+        max-width: 300px !important;
+        padding: 25px 20px !important;
+    }
+    .modal-icon { font-size: 40px; }
+}
+
+/* =========================================
+   10. MÀN HÌNH CỰC NHỎ (≤ 380px)
+   ========================================= */
+@media screen and (max-width: 380px) {
+    /* Category về 1 cột */
+    #sample-category-view {
+        grid-template-columns: 1fr !important;
+    }
+    /* Gallery về 1 cột */
+    .sample-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .category-card {
+        height: 90px !important;
+    }
+    .folder-bottom .folder-tab { right: 75px !important; }
+    .tab-btn { font-size: 11px; padding: 5px 10px; }
+    .rounded-square { height: calc(100vh - 100px); margin-bottom: 80px; }
+}
