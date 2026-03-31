@@ -171,7 +171,7 @@ async function updateToSheet() {
         });
         
         msg.style.color = '#5C8042';
-        msg.innerText = "Lệnh đã gửi! Web sẽ cập nhật sau vài phút.";
+        msg.innerText = "Xong rùi! Vài phút nữa là web sẽ cập nhật";
         setTimeout(() => location.reload(), 3000);
 
     } catch (e) {
