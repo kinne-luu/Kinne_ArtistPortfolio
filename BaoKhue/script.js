@@ -434,5 +434,5 @@ document.addEventListener('keydown', (e) => {
 });
 document.addEventListener('copy', (e) => {
     e.preventDefault();
-    alert('Ara, đừng copy của tớ mà :<');
+    alert('Noo, đừng copy của tớ mà :<');
 });

@@ -991,6 +991,7 @@ select.styled-select {
 
 @media screen and (max-width: 768px) {
     body {
+        background-position: 15% 30%;
         overflow: hidden;
         height: 100vh;
         display: flex;
