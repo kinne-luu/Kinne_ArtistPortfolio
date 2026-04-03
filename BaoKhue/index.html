@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Portfolio - Nanako Myu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
+</head>
+<body>
+
+<button id="report-btn" class="report-pill" data-i18n="report_btn">Báo cáo?</button>
+<div class="glass-box">
+
+    <div class="emo-title">Nanako Myu's Commission</div>
+    <div class="window-controls">
+        <div class="lang-switcher">
+            <span class="lang-btn active" data-lang="vi">Vie</span>
+            <span class="lang-divider">|</span>
+            <span class="lang-btn" data-lang="en">Eng</span>
+        </div>
+        <button class="control-btn" id="setting-btn"><i class="fa-solid fa-gear"></i></button>
+        <button class="control-btn" id="minimize-btn"><span>&ndash;</span></button>
+        <button class="control-btn" style="font-size: 10px;"><span>&#9634;</span></button>
+        <button class="control-btn" id="close-btn"><span>&times;</span></button>
+    </div>
+
+    <div id="setting-panel" class="setting-modal">
+        <div class="setting-header">
+            <h2><i class="fa-solid fa-gear"></i> Settings</h2>
+            <button id="close-setting-btn">&times;</button>
+        </div>
+
+        <div id="auth-section" class="setting-content" style="justify-content: center; align-items: center;">
+            <div class="form-group" style="width: 80%; text-align: center;">
+                <label style="font-size: 14px;">Nhập Password:</label>
+                <input type="password" id="auth-password-input" placeholder="Password" style="margin-top: 15px; text-align: center; padding: 10px; font-size: 14px; border-radius: 8px;">
+                <button id="auth-submit-btn" class="primary-btn" style="margin-top: 15px; width: 100%;">Access</button>
+                <div id="auth-msg" style="color: #c44545; margin-top: 10px; font-weight: bold; font-size: 12px;"></div>
+            </div>
+        </div>
+
+        <div id="main-setting-section" class="setting-content" style="display: none;">
+            <div class="form-group">
+                <label>Commission Status:</label>
+                <select id="set-status" class="styled-select">
+                    <option value="Open">Open</option>
+                    <option value="Closed">Closed</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Commision Slots</label>
+                <select id="set-slots" class="styled-select" style="text-align: center;">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Drive Links (Type - URL):</label>
+                <div id="drive-links-container"></div>
+                <button id="add-link-btn" class="sm-btn">+ Thêm Sample</button>
+            </div>
+
+            <button id="update-sheet-btn" class="primary-btn">Update</button>
+            <div id="setting-msg"></div>
+        </div>
+    </div>
+
+    <div class="cover-box">
+        <img src="https://raw.githubusercontent.com/kinne-luu/Kinne_ArtistPortfolio/refs/heads/main/BaoKhue/Background/Cover.webp" alt="Cover">
+    </div>
+
+    <div class="toolbar-container">
+        <div class="comm-badge">
+            <span class="badge-text" data-i18n="comm_badge">Commission:</span>
+            <span class="status-closed" id="comm-status-text">Closed</span>
+            <div class="divider"></div>
+            <div class="slot-wrap">
+                <span class="badge-text" data-i18n="slot_badge">Slot</span>
+                <div class="comm-slots" id="comm-slots-container"></div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="javascript:void(0);" class="nav-item active" data-i18n="nav_home">Home</a>
+            <a href="javascript:void(0);" class="nav-item" data-i18n="nav_tos">TOS & Price</a>
+            <a href="javascript:void(0);" class="nav-item" data-i18n="nav_sample">Sample</a>
+        </nav>
+
+        <div class="social-links">
+            <a href="https://x.com/nanakomyu" target="_blank" class="social-btn"><div class="x-icon"></div></a>
+            <a href="https://www.facebook.com/baokhue.nguyen.3975" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@dieptuming" target="_blank" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://vgen.co/nanakomyu" target="_blank" class="social-btn"><div class="vgen-icon"></div></a>
+        </div>
+    </div>
+
+    <div class="tab-viewport">
+        <div class="tab-track" id="tab-track">
+
+            <div class="tab-pane">
+                <div class="about-section">
+                    <div class="about-header"><div class="about-name">Nanako Myu</div><div class="about-title" data-i18n="about_artist">Artist</div></div>
+                    <div class="about-tags"><span class="tag">INTJ</span><span class="tag">Slytherin</span></div>
+                    <div class="about-details">
+                        <div class="detail-row"><i class="fa-solid fa-user-pen icon-gray"></i><span>Nanako / Myu</span></div>
+                        <div class="detail-row"><i class="fa-solid fa-ban icon-red"></i><span>No Robux CMS</span></div>
+                    </div>
+                </div>
+                <div class="music-player-mini">
+                    <div class="mini-header">
+                        <img src="https://raw.githubusercontent.com/kinne-luu/Kinne_ArtistPortfolio/refs/heads/main/BaoKhue/Avatar/Avatar2.png" class="mini-thumb">
+                        <div class="mini-info">
+                            <span class="mini-source"><i class="fa-brands fa-spotify"></i> This phone</span>
+                            <span class="mini-track">F*ck life</span>
+                            <span class="mini-artist">Nanako Myu</span>
+                        </div>
+                        <div class="mini-output">Media output</div>
+                    </div>
+                    <div class="mini-controls">
+                        <i class="fa-solid fa-heart mini-heart"></i>
+                        <div class="mini-main-btns">
+                            <i class="fa-solid fa-backward-step"></i>
+                            <i class="fa-solid fa-play" id="play-pause-btn"></i>
+                            <i class="fa-solid fa-forward-step"></i>
+                        </div>
+                    </div>
+                    <div class="mini-progress">
+                        <input type="range" id="seek-slider" value="0" max="100">
+                        <div class="mini-time"><span id="current-time">00:00</span><span id="duration-time">03:06</span></div>
+                    </div>
+                </div>
+
+                <div class="notes-section">
+                    <div class="notes-title" data-i18n="notes_title">*´ㅅ`)ﾞ Một số điều lưu ý của tui</div>
+                    <div class="notes-content">
+                        <p data-i18n="notes_p1"><strong>Kị:</strong> Các ship côn trùng, anh em họ hàng, ko huyết thống kị tất. Kị switch, notp cũng tránh mình ra ạ.</p>
+                        <p data-i18n="notes_p2"><strong>Một số OTP, CP ruột của tui:</strong></p>
+                        <ul>
+                            <li>Drarry (Harco, hdpm)</li>
+                            <li>GoGe (satosugu)</li>
+                            <li>jiling (liệt hỏa kiêu sầu)</li>
+                            <li>VietChi (countryhumans)</li>
+                            <li>madohomu (madoka magical)</li>
+                            <li>thượng mỹ ngẫu bính</li>
+                            <li>sherliam (moriarty the patriot)</li>
+                            <li>fukumori (bungo stray dogs)</li>
+                            <li>Băng cửu (hệ thống tự cứu nv phản diện)</li>
+                            <li>Atsuaku (atsushi x akutagawa)</li>
+                        </ul>
+                        <p data-i18n="notes_p3"><strong>NOTP của tui:</strong> Là các otp trên switch bác nào đặt notp tui mà bị từ chối thì hiểu nha.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane">
+                <div class="tos-price-wrapper">
+                    <div class="tos-col">
+                        <div class="tos-title" data-i18n="tos_title">Terms of Service (TOS)</div>
+                        <div class="tos-content">
+                            <ul>
+                                <li data-i18n="tos_l1"><strong>Không nhận:</strong> NSFW, người già, trẻ con, phụ nữ mang thai, đàn ông mang bầu, quá cơ bắp,...</li>
+                                <li data-i18n="tos_l2">Đặt slot (wl) cọc 30% giá. Xin chuyển tiền từ 50%-100% sau khi chốt order (qua Zalo/Messenger). Vui lòng chuyển sau 12h kể từ khi yêu cầu được chấp nhận.</li>
+                                <li data-i18n="tos_l3">Không trả lại tiền đã nhận trong bất kỳ trường hợp nào, trừ khi vấn đề là do lỗi của tui.</li>
+                                <li data-i18n="tos_l4">Tui có quyền từ chối khi vượt quá khả năng. Tui có quyền đăng tải tranh và dùng làm sample trừ khi bạn có yêu cầu khác.</li>
+                                <li data-i18n="tos_l5"><strong>Phụ phí:</strong> Background (50k - 1tr), Detail (50k - 500k), Lấy vid quá trình (+50k).</li>
+                                <li data-i18n="tos_l6"><strong>Hệ số:</strong> Com design (x2 giá gốc), Com thương mại (x3 giá gốc).</li>
+                                <li data-i18n="tos_l7">Tối đa 1-2 nhân vật/bức (nếu vẽ máy). Chi phí dựa vào số lượng và chất lượng.</li>
+                                <li data-i18n="tos_l8">Được chỉnh sửa miễn phí 3 lần (từ lần 4 cộng thêm 10%-30%). Quá trình phác thảo sẽ gửi ảnh định dạng png, jpg.</li>
+                                <li data-i18n="tos_l9"><strong>Thời gian:</strong> Có thể lên đến 1 tháng (tranh máy) hoặc 1 tuần (tranh màu nước).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="price-col">
+                        <div class="price-title" data-i18n="price_title">Price (Digital)</div>
+                        <div class="price-content">
+                            <div class="price-item"><span class="p-type">Head up</span><span class="p-val">≥ 450k<br><small>50$</small></span></div>
+                            <div class="price-item"><span class="p-type">Half</span><span class="p-val">≥ 600k<br><small>80$</small></span></div>
+                            <div class="price-item"><span class="p-type">Full</span><span class="p-val">≥ 1tr<br><small>120$</small></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane">
+                <div id="sample-container" class="sample-wrapper">
+                    <div class="loading-text" data-i18n="loading">Đợi xíu nhé, web đang load data...</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <audio id="audio-stream" src="https://raw.githubusercontent.com/kinne-luu/Kinne_ArtistPortfolio/main/BaoKhue/Music/B.mp3"></audio>
+    <div class="sharp-box"></div><div class="sharp-box-border"></div>
+    <div class="avatar-circle"><img src="https://raw.githubusercontent.com/kinne-luu/Kinne_ArtistPortfolio/refs/heads/main/BaoKhue/Avatar/avatar.jpg" alt="Avatar"></div>
+    <div class="gray-box"><div class="line"></div></div>
+</div>
+
+<div id="lightbox" class="lightbox-overlay hidden">
+    <button id="close-lightbox-btn">&times;</button>
+    <div class="lightbox-content" id="lightbox-content">
+        <img id="lightbox-img" src="" alt="Zoomed Sample">
+    </div>
+</div>
+
+<div id="report-modal" class="lightbox-overlay hidden">
+    <div class="report-content">
+        <button class="close-report-btn">&times;</button>
+        <p data-i18n="report_warning">Cậu hãy chắc chắn artist này vi phạm trước khi báo cáo nhé</p>
+        <div class="report-links">
+            <a href="https://www.facebook.com/kienmanhluu" target="_blank" class="report-link-pill"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="https://www.instagram.com/kinne_luu/" target="_blank" class="report-link-pill"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://x.com/kienmanhluu" target="_blank" class="report-link-pill"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
